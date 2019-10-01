@@ -3,5 +3,6 @@ Exercises from the Udacity nanodegree Data Scientist September - December 2019
 
 ## On this repo
 <ul>
-    <li> TBC </li>
+    <li> AirBnB Barcelona data Analysis </li>
+    
 </ul>

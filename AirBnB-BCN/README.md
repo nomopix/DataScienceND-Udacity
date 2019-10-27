@@ -6,7 +6,7 @@ Using the recommended <a href="https://www.datasciencecentral.com/profiles/blogs
 
 1) Is the price affected by the location?
 2) Which locations receive the most reviews? What is the split between accomodation type and its reviews? What's the top reviewed property?
-3) Can we predict the mean price or avg reviews based on seasonality?
+3) Can we predict the mean price based on seasonality?
 
 ## Files
 
@@ -64,7 +64,7 @@ On average, entire homes recieve more reviews than other "room types", having:
 
 The listing that has the most reviews is a Private room located in Ciutat Vella with a total of 645 reviews on the dataset, an average of 8 reviews per month and an average price of €50.
 
-### 3) Can we predict the mean price or avg reviews based on seasonality?
+### 3) Can we predict the mean price based on seasonality?
 
 Looking at the mean price over time, we can visually see some trends (probably weekends) and a couple of spikes which probably relate to Christmas and Easter holidays.
 

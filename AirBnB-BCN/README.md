@@ -2,7 +2,6 @@
 Ai‌r‌b‌n‌b‌, ‌ ‌I‌n‌c‌.‌ is an online marketplace for arranging or offering lodging, primarily homestays, or tourism experiences. The company does not own any of the real estate listings, nor does it host events; it acts as a broker, receiving commissions from each booking. <i>Extracted from <a href="https://en.wikipedia.org/wiki/Airbnb">Wikipedia</a></i>.
 
 ## Project Motivation
-<hr>
 Using the recommended <a href="https://www.datasciencecentral.com/profiles/blogs/crisp-dm-a-standard-methodology-to-ensure-a-good-outcome">CRISP-DM</a> methodology on the <a href="https://www.udacity.com/course/data-scientist-nanodegree--nd025">Data Science Nanodegree by Udacity</a>, analyse the AirBnB Barcelona July 2019 dataset, focusing on the following 3 aspects:
 
 1) Is the price affected by the location?
@@ -10,7 +9,6 @@ Using the recommended <a href="https://www.datasciencecentral.com/profiles/blogs
 3) Can we predict the mean price or avg reviews based on seasonality?
 
 ## Files
-<hr>
 
 * <b>AirBnB-BCN-July2019Extract-Analysis</b> jupyter notebook.
 * Data files contained within the "data" folder:
@@ -57,7 +55,7 @@ The listing that has the most reviews is a Private room located in Ciutat Vella 
 
 ### 3) Can we predict the mean price or avg reviews based on seasonality?
 
-
+TBC...
 
 
 ## Installation

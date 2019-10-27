@@ -19,6 +19,10 @@ Using the recommended <a href="https://www.datasciencecentral.com/profiles/blogs
     * <b>reviews.csv</b>: Summary Review data and Listing ID (to facilitate time based analytics and visualisations linked to a listing).
     * <b>reviews.csv.gz</b>: Detailed Review Data for listings in Barcelona
 
+## Installation
+Anaconda, python 3.7, jupyter notebook extensions (to enable collapsible sections)
+conda install -c conda-forge jupyter_nbextensions_configurator
+
 ## Summary of findings:
 
 ### 1) Is the price affected by location?
@@ -33,6 +37,7 @@ This is also seen when plotted by phisical location:
 <img src="assets/price-location-heatmap.png"
      alt="AirBnB Barcelona 2019 - heatmap"
      style="float: left; margin-right: 10px;" />
+     
 Even when plotting by room type, we also observe certain areas which are "hotter" than others.
 
 <img src="assets/price-location-heatmap-facet.png"
@@ -58,6 +63,3 @@ The listing that has the most reviews is a Private room located in Ciutat Vella 
 TBC...
 
 
-## Installation
-Anaconda, python 3.7, jupyter notebook extensions (to enable collapsible sections)
-conda install -c conda-forge jupyter_nbextensions_configurator

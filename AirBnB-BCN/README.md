@@ -23,9 +23,9 @@ The process recommended on the course for this is  <a href="https://www.datascie
 
 ### Exploration questions
 As part of this project and to help focus the analysis, there are three questions which I'll try to answer using the data avaiable:
-1. What makes a listing more profitable?
-2. What are the key features that generate better reviews?
-3. 
+1. Is the price affected by the location of the property?
+2. Which locations receive the most reviews? What is the split between accomodation type and its reviews? What's the top reviewed property?
+3. Can we predict the price by neighbourhood group?
 
 ## Quick overview of the content
 
@@ -33,7 +33,7 @@ As part of this project and to help focus the analysis, there are three question
 
 ### Chosen Data set: Barcelona AirBnB provided on July 2019
 
-I decided to choose the Barcelona <a href="http://insideairbnb.com/get-the-data.html">AirBnB dataset</a> (with the help of the course's menthor as I couldn't decide!) mainly because I studied there (quite a while ago) and it'd be a really interesting dataset which I could relate to.
+I decided to choose the Barcelona <a href="http://insideairbnb.com/get-the-data.html">AirBnB dataset</a> (with the help of the course's menthor as I couldn't decide!) mainly because I lived there (quite a while ago) and it'd be a really interesting dataset which I could relate to.
 
 ### Files
 * AirBnB-BCN-July2019Extract-Analysis jupyter notebook
@@ -51,17 +51,75 @@ I opted for creating a folder named "data" with all the different datasets downl
 
 ## CRISP-DM on this dataset
 
-### Business Understanding
-AA‌i‌r‌b‌n‌b‌, ‌ ‌I‌n‌c‌.‌ is an online marketplace for arranging or offering lodging, primarily homestays, or tourism experiences. The company does not own any of the real estate listings, nor does it host events; it acts as a broker, receiving commissions from each booking. <i>Extracted from <a href="https://en.wikipedia.org/wiki/Airbnb">Wikipedia</a></i>.
+#### Business Understanding
+Ai‌r‌b‌n‌b‌, ‌ ‌I‌n‌c‌.‌ is an online marketplace for arranging or offering lodging, primarily homestays, or tourism experiences. The company does not own any of the real estate listings, nor does it host events; it acts as a broker, receiving commissions from each booking. <i>Extracted from <a href="https://en.wikipedia.org/wiki/Airbnb">Wikipedia</a></i>.
 
-### Data loading and wrangling
-With any dataset, we need to explore to find areas where data is missing, incomplete or requires modification (such as data types). This also helps understand the data, what it contains and guide our exploration. As part of this section, I made a decision of which files would be used for the analysis:
-* Calendar
-* Listings
+#### Data understanding
+The datasets provided give an overview of the listings and their availability over a 12 month period (Jul 2019 to Jul 2020) as well as review data. For the review data we have to note that we don't have whether it's positive or negative, just the comment and the date. For this reason, I decided to use the following files to help with the analysis.
 
-On this section, I looked for data which was missing or outlyers which could represent incorrect data on pricing as well as correcting data types to help with the analysis.
+* Calendar (summary)
+* Listings (summary)
 
-### Data Analysis
+These two files combined provide the price and availability for each of the properties. Also, the number of total reviews and the number of reviews per month for each property. 
+
+#### Prepare Data
+With any dataset, we need to explore to find areas where data is missing, incomplete or requires modification (such as data types). This also helps understand the data, what it contains and guide our exploration.
+
+These key data processings were made:
+* Convert string representing price to floats
+* Split dates into months and years
+* Remove NaNs: On this part, as a result of understanding the NaNs a particularity on prices showed up, where many listings would have "9999.0" as a price for a period of time. This could be due to a data bug or intentional action from hosts, however, given that they only represent 0.02% of all listings, I opted for removing them from the set.
+* Renamed column "id" on Listings to "listing_id" to be able to "inner join" it with the calendar file.
+
+After merging the listing and calendar file, we have a whole dataset with locations and prices for the whole year.
+
+#### Model data
+Let's recap on the questions which enable us to focus the analysis:
+1. Is the price affected by the location of the property?
+2. Which locations receive the most reviews? What is the split between accomodation type and its reviews? What's the top reviewed property?
+3. Can we predict the price by neighbourhood group?
+
+For case 1 we used simple techniques to explore the data, from plots, groupby and statistic correlations to show if location is related to the price of a listing.
+
+For case 2, similar simple calculations to explore the data.
+
+#### Results
+
+> Is the price affected by the location of the property?
+
+The answer is, yes, it is, though there are, of course, other factors to consider. However, just taking into consideration room type and location, the price seems to be higher the closer to the center we get.
+
+- In 'Entire home/apt' the top 2 are Eixample and Sant Marti
+- In 'Private Room' the top 2 are Eixample and Gracia
+- In 'Shared room' the top 2 are Gracia and Sarria-SantGervasi, but it's worth noting that there are potential outliers on shared rooms that may be poluting the result
+
+<img src="assets/price-location-heatmap.png"
+     alt="AirBnB Barcelona 2019 - heatmap"
+     style="float: left; margin-right: 10px;" />
+
+<img src="assets/price-location-heatmap-facet.png"
+     alt="AirBnB Barcelona 2019 - heatmap"
+     style="float: left; margin-right: 10px;" />
+
+We obtained a negative correlation, funny enough, that suggest they are invertedly correlated but it suggests other factors need to be considered.
 
 
+> Which locations receive the most reviews? What is the split between accomodation type and its reviews? What's the top reviewed property?
 
+Both private rooms and entire homes tend to receive more reviews, almost double of those of shared rooms. On this dataset, the Entire homes has the highest number of reviews on average. 
+
+<img src="assets/reviews-by-room-type.png"
+     alt="AirBnB Barcelona 2019 - heatmap"
+    />
+
+The property with the highest number of reviews (645) is a Private room located in El Barri Gotic (Ciutat Vella) with an average price of $50. This listing receives on average 8.6 reviews per month.
+
+> Can we predict the price by neighbourhood group?
+
+Technically, we can, however it won't be too accurate as location is not one of the main contributors to price
+
+### Deploy
+
+## Installation
+Anaconda, python 3.7, jupyter notebook extensions (to enable collapsible sections)
+conda install -c conda-forge jupyter_nbextensions_configurator

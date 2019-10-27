@@ -10,8 +10,9 @@ Using the recommended <a href="https://www.datasciencecentral.com/profiles/blogs
 
 ## Files
 
-* <b>AirBnB-BCN-July2019Extract-Analysis</b> jupyter notebook.
-* Data files contained within the "data" folder:
+* <b><a href="AirBnB-BCN-July2019Extract-Analysis.ipynb">AirBnB-BCN-July2019Extract-Analysis</a></b> jupyter notebook.
+* Data files contained within the "data" folder. These files were downloaded from <a href="http://insideairbnb.com/get-the-data.html">insideairbnb.com</a>:
+
     * <b>calendar.csv</b>: which contains detailed calendar data for listings in Barcelona
     * <b>listings.csv</b>: which contains summary information and metrics for listings in Barcelona (good for visualizations)
     * <b>listings.csv.gz</b>: which contains detailed listings

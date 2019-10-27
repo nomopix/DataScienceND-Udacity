@@ -1,0 +1,6 @@
+# Ignore pychache and checkpoints
+__pycache__/
+.ipynb_checkpoints/
+
+# ignore data file
+.DS_Store

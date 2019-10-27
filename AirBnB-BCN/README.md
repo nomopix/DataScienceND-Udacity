@@ -88,4 +88,4 @@ Focusing exclusively on time, price and neighbourhood groups, a polynomial linea
 We could look more in detail about all the features the listings have (such as TV, internet, etc) but with this simple model, we could obtain a simple prediction model that woudn't fall too far from reality.
 
 ## Credits
-As with anything code related, thanks to stack over flow, dozens of bloggers who write their experience, python documentation online, and of course, google search engine for making access to those only few clicks away.
+As with anything code related, thanks to stackoverflow, dozens of bloggers who write their experience, python documentation online, and of course, google search engine for making access to those only few clicks away. Not forgetting the course mentor Nicolas, who ensures I'm motivated to crack on with this course! :)

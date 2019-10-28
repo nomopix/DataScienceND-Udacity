@@ -31,6 +31,8 @@ from sklearn.metrics import r2_score
 
 ## Summary of findings:
 
+A more user friendly version of this analysis (with tips to Barcelona) can be found on the medium post <a href="https://medium.com/@nomopix/airbnb-in-barcelona-3-questions-and-some-context-5598611f84dc?sk=5cd0125dd98d0b0d65670b318bf65a32">here</a>.
+
 ### 1) Is the price affected by location?
 Yes, it is. Looking at the mean price per neighbourhood group we can see that there are some locations which prices are higher than others:
 

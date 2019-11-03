@@ -5,6 +5,7 @@ Exercises from the <a href="https://www.udacity.com/course/data-scientist-nanode
 ## On this repo
 <ul>
     <li> <a href="./AirBnB-BCN/README.md">AirBnB Barcelona 2019 data analysis</a> </li>
+    <li> <a href="./Disaster-response-pipelines/readme.md">Disaster response pipelines</a></li>
     <li>...</li>
     
 </ul>

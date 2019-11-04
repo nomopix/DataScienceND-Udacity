@@ -1,9 +1,15 @@
 import sys
-
+import sqlite3
+import pandas as pd
 
 def load_data(database_filepath):
-    pass
-
+    '''
+        input: database filepath and name
+        output: dataframe from the clasified_messages table contained in the given database
+    '''
+    connection = sqlite3.connect(database_filepath)
+    df = pd.read_sql_query("SELECT * FROM clasified_messages", connection)
+    return df
 
 def tokenize(text):
     pass

@@ -33,7 +33,7 @@ def clean_data(df):
     tempDF = df['categories'].str.split(";", expand = True)
     categs = pd.concat([df.iloc[:, :i], tempDF, df.iloc[:, i+1:]], axis=1)
 
-    # extract column names the expanded columns
+    # extract column names of the  expanded columns
     row = categs.iloc[0:1] # pick first row to gather column names
     skip = ['id','message','original','genre']
     category_colnames = list()
@@ -51,8 +51,8 @@ def clean_data(df):
             categs[column] = categs[column].astype(int)
 
     # remove duplicates
-    df.drop_duplicates(inplace=True)
-    return df
+    categs.drop_duplicates(inplace=True)
+    return categs
 
 def save_data(df, database_filename):
     '''
